@@ -24,6 +24,7 @@ const colors = {
 	txtBlue: '#0075FF',
 	txtDim: '#C5C5C5',
 	bgColor: '#f7f9f8',
+	bgColor2: '#e5e5e5',
 	mainBgColor: '#EEEEEE',
 	white: '#ffffff',
 	borderColor: '#E5E5E5',
