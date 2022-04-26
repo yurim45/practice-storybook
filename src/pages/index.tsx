@@ -19,7 +19,7 @@ import {
 	IconBackArrow,
 } from '@components/icons/index';
 import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
-import { SubMainTop, TabMenu } from '@components/common/index';
+import { SubMainTop, SubPageTitle, TabMenu } from '@components/common/index';
 
 const Home: NextPage = () => {
 	return (
@@ -34,7 +34,8 @@ const Home: NextPage = () => {
 				<h1>Next + Storybook Test Page</h1>
 				<section>
 					<SubMainTop title="components" />
-					<SubMainTop title="터치영역 텍스트패팅 10 생략지점점점" />
+					<SubMainTop title="터치영역 텍스트패팅 10 생략지점점점점" />
+					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
 					<ButtonWrapper>
 						<Button label="클릭" color="white" bgColor="primary" radius={10} />
 					</ButtonWrapper>
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
 						/>
 					</TabMenuWrapper>
 
-					<h2>SVG Icons</h2>
+					<SubPageTitle title="SVG Icons" />
 					<IconNotice />
 					<IconAlert />
 					<IconAdd />

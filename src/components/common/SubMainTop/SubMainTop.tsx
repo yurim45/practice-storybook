@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IconNotice, IconOpenArrow } from '@components/icons';
 import { flex, title03 } from '../../../styles/variable';
@@ -8,15 +8,17 @@ type SubMainTopProps = {
 };
 
 const SubMainTop = ({ title }: SubMainTopProps) => {
+	const [open, setOpen] = useState<boolean>(true);
+
 	return (
 		<SubMain>
-			<div className="title">
+			<button className="title" onClick={() => setOpen(!open)}>
 				<h2>{title}</h2>
-				<IconOpenArrow open={true} />
-			</div>
-			<IconNoticeWrapper>
+				<IconOpenArrow open={open} />
+			</button>
+			<IconWrapper>
 				<IconNotice />
-			</IconNoticeWrapper>
+			</IconWrapper>
 		</SubMain>
 	);
 };
@@ -45,9 +47,9 @@ const SubMain = styled.div`
 	}
 `;
 
-const IconNoticeWrapper = styled.span`
+const IconWrapper = styled.button`
 	position: relative;
-	top: -40px;
+	top: -39px;
 	right: -331px;
 	width: 13px;
 	line-height: 0.5;
