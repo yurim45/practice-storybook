@@ -2,6 +2,24 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Button from '@components/elem/button/Button';
 import styled from 'styled-components';
+import {
+	IconAdd,
+	IconAlert,
+	IconAlertBell,
+	IconHelp,
+	IconInputArrow,
+	IconNotice,
+	IconSearch,
+	IconStar,
+	IconTopMenu,
+	IconUpload,
+	IconOpenArrow,
+	IconHome,
+	IconClose,
+	IconBackArrow,
+} from '@components/icons/index';
+import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
+import { SubMainTop, TabMenu } from '@components/common/index';
 
 const Home: NextPage = () => {
 	return (
@@ -15,9 +33,49 @@ const Home: NextPage = () => {
 			<Main>
 				<h1>Next + Storybook Test Page</h1>
 				<section>
+					<SubMainTop title="components" />
+					<SubMainTop title="터치영역 텍스트패팅 10 생략지점점점" />
 					<ButtonWrapper>
 						<Button label="클릭" color="white" bgColor="primary" radius={10} />
 					</ButtonWrapper>
+					<TabMenuWrapper>
+						<TabMenu
+							data={[
+								{ id: 1, value: '일반공제' },
+								{ id: 2, value: '추가공제' },
+							]}
+							components={{
+								1: <></>,
+								2: <></>,
+							}}
+						/>
+					</TabMenuWrapper>
+
+					<h2>SVG Icons</h2>
+					<IconNotice />
+					<IconAlert />
+					<IconAdd />
+					<IconInputArrow color="#333333" direction="up" />
+					<IconInputArrow color="#999999" direction="down" />
+					<IconHelp width={14} />
+					<IconSearch width={18} />
+					<IconAlertBell on={true} />
+					<IconAlertBell on={false} />
+					<IconTopMenu on={true} />
+					<IconTopMenu on={false} />
+					<IconStar />
+					<IconUpload />
+					<IconOpenArrow open={true} />
+					<IconOpenArrow open={false} />
+					<IconHome />
+					<IconClose />
+					<IconBackArrow />
+
+					<h2>Tags</h2>
+					<TagListCategory text="산후조리원" color="green" />
+					<TagListCategory text="연봉초과" color="red" />
+					<TagUserEdit />
+					<TagNts />
 				</section>
 			</Main>
 		</>
@@ -28,7 +86,7 @@ export default Home;
 
 const Main = styled.main`
 	margin: auto;
-	width: 600px;
+	width: 375px;
 	background: ${({ theme }) => theme.colors.bgColor2};
 	border-top: 8px solid ${({ theme }) => theme.colors.primary};
 
@@ -37,9 +95,20 @@ const Main = styled.main`
 		font-size: ${({ theme }) => theme.textSize.m};
 		font-weight: 700;
 	}
+
+	h2 {
+		padding: 10px;
+		font-size: ${({ theme }) => theme.textSize.m};
+		font-weight: 700;
+	}
 `;
 
 const ButtonWrapper = styled.div`
+	margin: auto;
+	width: 100%;
+`;
+
+const TabMenuWrapper = styled.div`
 	margin: auto;
 	width: 100%;
 `;

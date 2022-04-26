@@ -21,7 +21,7 @@ const colors = {
 	txt999: '#999999',
 	txtGreen: '#00B98D',
 	txtRed: '#F85151',
-	txtBlue: '#0075FF',
+	txtBlue: '#0085FF',
 	txtDim: '#C5C5C5',
 	bgColor: '#f7f9f8',
 	bgColor2: '#e5e5e5',
