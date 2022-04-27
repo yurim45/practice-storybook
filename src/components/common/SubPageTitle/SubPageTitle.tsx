@@ -28,25 +28,24 @@ const SubMain = styled.div`
 
 	h2 {
 		${title03()};
-		width: 245px;
+		width: 249px;
+		height: 52px;
 		margin: auto;
-		padding: 14px 4px;
 		text-align: center;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+		line-height: 2.1;
 	}
 `;
 
 const IconWrapper = styled.button`
-	${flex()};
 	position: relative;
-	top: -40px;
+	top: -34px;
 	right: -315px;
 	color: ${({ theme }) => theme.colors.txtGreen};
 	font-weight: 400;
 	font-size: 14px;
-	line-height: 1.8;
 	letter-spacing: -0.2px;
 
 	span {

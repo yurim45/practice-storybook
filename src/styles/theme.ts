@@ -14,6 +14,7 @@ const textSize = {
 };
 
 const colors = {
+	primary2: '#0AA882',
 	primary: '#00C092',
 	txt333: '#333333',
 	txt555: '#555555',
@@ -22,6 +23,8 @@ const colors = {
 	txtGreen: '#00B98D',
 	txtRed: '#F85151',
 	txtBlue: '#0085FF',
+	txtBtnExcept: '#7C8986',
+	bgBtnExcept: '#EEF1F1',
 	txtDim: '#C5C5C5',
 	bgColor: '#f7f9f8',
 	bgColor2: '#e5e5e5',

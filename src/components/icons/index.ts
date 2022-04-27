@@ -12,6 +12,7 @@ import IconOpenArrow from './IconOpenArrow';
 import IconHome from './IconHome';
 import IconClose from './IconClose';
 import IconBackArrow from './IconBackArrow';
+import IconRefresh from './IconRefresh';
 
 export {
 	IconNotice,
@@ -28,4 +29,5 @@ export {
 	IconHome,
 	IconClose,
 	IconBackArrow,
+	IconRefresh,
 };

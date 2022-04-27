@@ -17,6 +17,7 @@ import {
 	IconHome,
 	IconClose,
 	IconBackArrow,
+	IconRefresh,
 } from '@components/icons/index';
 import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
 import { SubMainTop, SubPageTitle, TabMenu } from '@components/common/index';
@@ -36,9 +37,34 @@ const Home: NextPage = () => {
 					<SubMainTop title="components" />
 					<SubMainTop title="터치영역 텍스트패팅 10 생략지점점점점" />
 					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
-					<ButtonWrapper>
-						<Button label="클릭" color="white" bgColor="primary" radius={10} />
-					</ButtonWrapper>
+					<Button label="클릭" color="white" bgColor="primary" radius={10} />
+					<Button
+						label="추가하기"
+						color="white"
+						bgColor="primary2"
+						radius={10}
+					/>
+					<Button
+						label="수정"
+						size="small"
+						color="white"
+						bgColor="primary"
+						radius={14}
+					/>
+					<Button
+						label="가족연결"
+						size="small"
+						color="white"
+						bgColor="primary2"
+						radius={14}
+					/>
+					<Button
+						label="제외"
+						size="small"
+						color="txtBtnExcept"
+						bgColor="bgBtnExcept"
+						radius={14}
+					/>
 					<TabMenuWrapper>
 						<TabMenu
 							data={[
@@ -71,8 +97,9 @@ const Home: NextPage = () => {
 					<IconHome />
 					<IconClose />
 					<IconBackArrow />
+					<IconRefresh />
 
-					<h2>Tags</h2>
+					<SubPageTitle title="Tags" />
 					<TagListCategory text="산후조리원" color="green" />
 					<TagListCategory text="연봉초과" color="red" />
 					<TagUserEdit />

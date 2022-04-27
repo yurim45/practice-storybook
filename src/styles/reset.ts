@@ -70,29 +70,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
-
-  /* input[type='radio'] {
-			appearance:none;
-			width:24px;
-			height:24px;
-			border-radius:50%;
-			background:#ffffff;
-		}
-		input[type='radio']:before {
-			content:'';
-			display:block;
-			width:70%;
-			height:70%;
-			margin: 15% auto;
-			border-radius:50%;  
-      background:#C5C5C5;
-		}
-		input[type='radio']:checked:before {
-     	width:12px;
-			height:12px;
-      border:1.5px solid #00C092;
-			background:#00C092;
-		} */
 `;
 
 export default GlobalStyle;
