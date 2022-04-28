@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Button from '@components/elem/button/Button';
+import { AnyAction } from 'redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
 import styled from 'styled-components';
 import {
 	IconAdd,
@@ -21,8 +23,32 @@ import {
 } from '@components/icons/index';
 import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
 import { SubMainTop, SubPageTitle, TabMenu } from '@components/common/index';
+import { Button, TextInput } from '@elem/index';
+import { getUserName } from '@data/userInfo/userInfo';
+import { useForm } from 'react-hook-form';
+
+type State = { data: string };
+type AppDispatch = ThunkDispatch<State, any, AnyAction>;
 
 const Home: NextPage = () => {
+	const dispatch: AppDispatch = useDispatch();
+	const userInfo = useSelector((state) => state);
+
+	const { register, handleSubmit, reset } = useForm({
+		defaultValues: {
+			name: '',
+			email: '',
+			search: '',
+		},
+	});
+
+	const handleUserInfo = (data: any) => {
+		dispatch(getUserName(data?.name));
+		reset();
+	};
+
+	console.log('userInfo', userInfo);
+
 	return (
 		<>
 			<Head>
@@ -38,12 +64,7 @@ const Home: NextPage = () => {
 					<SubMainTop title="터치영역 텍스트패팅 10 생략지점점점점" />
 					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
 					<Button label="클릭" color="white" bgColor="primary" radius={10} />
-					<Button
-						label="추가하기"
-						color="white"
-						bgColor="primary2"
-						radius={10}
-					/>
+
 					<Button
 						label="수정"
 						size="small"
@@ -77,6 +98,31 @@ const Home: NextPage = () => {
 							}}
 						/>
 					</TabMenuWrapper>
+					<form onSubmit={handleSubmit(handleUserInfo)}>
+						<TextInput
+							register={register('name')}
+							title="이름"
+							placeholder="입력 대기_플레이스 홀더"
+							iconStar={true}
+						/>
+						<TextInput
+							register={register('email')}
+							title="메일"
+							placeholder="입력 대기_플레이스 홀더"
+							iconHelp={true}
+						/>
+						<TextInput
+							register={register('search')}
+							placeholder="입력 대기_플레이스 홀더"
+						/>
+						<Button
+							label="추가하기"
+							type="submit"
+							color="white"
+							bgColor="primary2"
+							radius={10}
+						/>
+					</form>
 
 					<SubPageTitle title="SVG Icons" />
 					<IconNotice />

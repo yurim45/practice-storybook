@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IconAdd } from '@components/icons';
-import { flex, title03 } from '../../../styles/variable';
+import { title03 } from '../../../styles/variable';
 
 type SubPageProps = {
 	title: string;
+	onClick?: () => void;
 };
 
-const SubPageTitle = ({ title }: SubPageProps) => {
+const SubPageTitle = ({ title, onClick }: SubPageProps) => {
 	return (
 		<SubMain>
 			<h2>{title}</h2>
-			<IconWrapper>
+			<AddBton type="button" onClick={onClick}>
 				<IconAdd />
 				<span>추가</span>
-			</IconWrapper>
+			</AddBton>
 		</SubMain>
 	);
 };
@@ -39,7 +40,7 @@ const SubMain = styled.div`
 	}
 `;
 
-const IconWrapper = styled.button`
+const AddBton = styled.button`
 	position: relative;
 	top: -34px;
 	right: -315px;

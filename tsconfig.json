@@ -15,15 +15,21 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": "./",
-    "paths": {
+    "paths": { 
+      "@assets/*": [
+      "./public/assets/*"
+      ], 
       "@components/*": [
         "./src/components/*"
+      ],
+      "@elem/*": [
+        "./src/components/elem/*"
       ],
       "@styles/*": [
         "./src/styles/*"
       ],
-      "@assets/*": [
-        "./public/assets/*"
+      "@data/*": [
+        "./src/data/*"
       ], 
     }
   },

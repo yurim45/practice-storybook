@@ -1,12 +1,12 @@
 type IconProps = {
 	width?: number;
 };
-const IconHelp = ({ width }: IconProps) => {
+const IconHelp = ({ width = 14 }: IconProps) => {
 	return (
 		<svg
 			width={width}
-			// height="15"
-			viewBox="0 0 14 15"
+			height={width + 1}
+			viewBox={`0 0 ${width} ${width + 1}`}
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>

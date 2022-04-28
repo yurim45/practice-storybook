@@ -7,12 +7,13 @@ type ButtonProps = {
 	color?: string;
 	bgColor: string;
 	radius?: number;
+	type?: 'submit' | 'button';
 	onClick?: () => void;
 };
 
-const Button = ({ label, ...props }: ButtonProps) => {
+const Button = ({ label, type = 'button', ...props }: ButtonProps) => {
 	return (
-		<Inner type="button" {...props}>
+		<Inner type={type} {...props}>
 			{label}
 		</Inner>
 	);
