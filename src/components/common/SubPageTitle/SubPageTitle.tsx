@@ -42,7 +42,7 @@ const SubMain = styled.div`
 
 const AddBton = styled.button`
 	position: relative;
-	top: -34px;
+	top: -35px;
 	right: -315px;
 	color: ${({ theme }) => theme.colors.txtGreen};
 	font-weight: 400;

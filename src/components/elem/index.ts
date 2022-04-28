@@ -1,4 +1,5 @@
 import Button from '@elem/button/Button';
-import TextInput from '@elem/textInput/TextInput';
+import TextInput from '@components/elem/textInput/TextInput';
+import SearchInput from '@components/elem/searchInput/SearchInput';
 
-export { Button, TextInput };
+export { Button, TextInput, SearchInput };

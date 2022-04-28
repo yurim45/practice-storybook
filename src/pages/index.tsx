@@ -23,8 +23,8 @@ import {
 } from '@components/icons/index';
 import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
 import { SubMainTop, SubPageTitle, TabMenu } from '@components/common/index';
-import { Button, TextInput } from '@elem/index';
-import { getUserName } from '@data/userInfo/userInfo';
+import { Button, TextInput, SearchInput } from '@elem/index';
+import { getUserInfo } from '@data/userInfo/userInfo';
 import { useForm } from 'react-hook-form';
 
 type State = { data: string };
@@ -32,7 +32,7 @@ type AppDispatch = ThunkDispatch<State, any, AnyAction>;
 
 const Home: NextPage = () => {
 	const dispatch: AppDispatch = useDispatch();
-	const userInfo = useSelector((state) => state);
+	const userInfo = useSelector((state: any) => state?.userInfo);
 
 	const { register, handleSubmit, reset } = useForm({
 		defaultValues: {
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
 	});
 
 	const handleUserInfo = (data: any) => {
-		dispatch(getUserName(data?.name));
+		dispatch(getUserInfo(data));
 		reset();
 	};
 
@@ -111,10 +111,7 @@ const Home: NextPage = () => {
 							placeholder="입력 대기_플레이스 홀더"
 							iconHelp={true}
 						/>
-						<TextInput
-							register={register('search')}
-							placeholder="입력 대기_플레이스 홀더"
-						/>
+						<SearchInput register={register('search')} />
 						<Button
 							label="추가하기"
 							type="submit"

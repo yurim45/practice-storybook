@@ -19,6 +19,8 @@ const Button = ({ label, type = 'button', ...props }: ButtonProps) => {
 	);
 };
 
+export default Button;
+
 const Inner = styled.button<ButtonProps>`
 	padding: 12px;
 	width: ${({ size }) => (size === 'small' ? `${80}px` : '100%')};
@@ -32,5 +34,3 @@ const Inner = styled.button<ButtonProps>`
 	line-height: 0.5;
 	letter-spacing: -0.2px;
 `;
-
-export default Button;

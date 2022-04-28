@@ -1,13 +1,13 @@
 import { AnyAction } from 'redux';
 
 // 액션 type
-const ADD_USER_NAME = 'ADD_USER_NAME' as const;
-const CLEAR = 'CLEAR' as const;
+const ADD_USER_INFO = 'ADD_USER_INFO';
+const CLEAR = 'CLEAR';
 
 // 액션 생성 함수
-export const getUserName = (value: string) => {
+export const getUserInfo = (value: string) => {
 	return (dispatch: any) => {
-		dispatch({ type: ADD_USER_NAME, data: value });
+		dispatch({ type: ADD_USER_INFO, data: value });
 	};
 };
 
@@ -17,29 +17,28 @@ export const clear = () => {
 	};
 };
 
-// 액션들의 타입스크립트 타입 준비
-type UserAction = ReturnType<typeof getUserName> | ReturnType<typeof clear>;
-
 // 상태를 위한 타입 선언
-export type User = {
+export type UserProps = {
 	id: number;
 	name: string;
+	email: string;
 };
 
-type UserState = User[];
-
 // 초깃값 설정
-const INITIAL_STATE: UserState = [];
+const INITIAL_STATE: UserProps[] = [];
 
 // 리듀서 구현
 export const userInfo = (
-	state: UserState = INITIAL_STATE,
+	state: UserProps[] = INITIAL_STATE,
 	action: AnyAction
-): UserState => {
+): UserProps[] => {
 	switch (action?.type) {
-		case ADD_USER_NAME:
+		case ADD_USER_INFO:
 			const nextId = state?.length > 0 ? state?.length + 1 : 1;
-			return [...state, { id: nextId, name: action?.data }];
+			return [
+				...state,
+				{ id: nextId, name: action?.data?.name, email: action?.data?.email },
+			];
 		case CLEAR:
 			return INITIAL_STATE;
 		default:

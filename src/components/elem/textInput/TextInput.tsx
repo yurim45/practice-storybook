@@ -33,6 +33,8 @@ const TextInput = ({
 	);
 };
 
+export default TextInput;
+
 const Inner = styled.div`
 	width: 335px;
 	margin: auto;
@@ -54,5 +56,3 @@ const Title = styled.div`
 const InnerInput = styled.input`
 	${inputStyle()};
 `;
-
-export default TextInput;
