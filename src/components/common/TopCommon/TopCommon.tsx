@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {
-	IconNotice,
-	IconOpenArrow,
-	IconSearch,
-	IconTopMenu,
-} from '@components/icons';
+import { IconSearch, IconTopMenu } from '@components/icons';
 import { flex, title03 } from '../../../styles/variable';
 
 type SubMainTopProps = {
@@ -50,12 +45,4 @@ const SubMain = styled.div`
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
-`;
-
-const IconWrapper = styled.button`
-	position: relative;
-	top: -39px;
-	right: -331px;
-	width: 13px;
-	line-height: 0.5;
 `;

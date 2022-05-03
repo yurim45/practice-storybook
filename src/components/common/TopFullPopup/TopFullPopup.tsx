@@ -1,56 +1,45 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { IconNotice, IconOpenArrow } from '@components/icons';
+import { IconSearch, IconClose } from '@components/icons';
 import { flex, title03 } from '../../../styles/variable';
 
 type SubMainTopProps = {
 	title: string;
 };
 
-const SubMainTop = ({ title }: SubMainTopProps) => {
+const TopFullPopup = ({ title }: SubMainTopProps) => {
 	const [open, setOpen] = useState<boolean>(true);
 
 	return (
 		<SubMain>
+			<button>
+				<IconClose />
+			</button>
 			<button className="title" onClick={() => setOpen(!open)}>
 				<h2>{title}</h2>
-				<IconOpenArrow open={open} />
 			</button>
-			<IconWrapper>
-				<IconNotice />
-			</IconWrapper>
 		</SubMain>
 	);
 };
 
-export default SubMainTop;
+export default TopFullPopup;
 
 const SubMain = styled.div`
+	${flex()};
 	width: 375px;
 	height: 52px;
+	padding: 0 40px 0 20px;
 	background: ${({ theme }) => theme.colors.white};
 
 	.title {
-		${flex()};
 		width: 245px;
+		height: 52px;
 		margin: auto;
-
-		h2 {
-			${title03()};
-			display: inline;
-			padding: 12px 4px;
-			line-height: 2;
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-		}
+		padding: 12px 4px;
+		${title03()};
+		line-height: 0.5;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
-`;
-
-const IconWrapper = styled.button`
-	position: relative;
-	top: -39px;
-	right: -331px;
-	width: 13px;
-	line-height: 0.5;
 `;

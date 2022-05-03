@@ -1,17 +1,17 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import SubMainTop from './SubMainTop';
+import TopFullPopup from './TopFullPopup';
 
 export default {
-	title: '컴포넌트/SubMainTop',
-	component: SubMainTop,
+	title: '컴포넌트/TopFullPopup',
+	component: TopFullPopup,
 	argTypes: {
 		title: { type: 'string' },
 	},
-} as ComponentMeta<typeof SubMainTop>;
+} as ComponentMeta<typeof TopFullPopup>;
 
-const Template: ComponentStory<typeof SubMainTop> = (args) => (
-	<SubMainTop {...args} />
+const Template: ComponentStory<typeof TopFullPopup> = (args) => (
+	<TopFullPopup {...args} />
 );
 
 export const Primary = Template.bind({});

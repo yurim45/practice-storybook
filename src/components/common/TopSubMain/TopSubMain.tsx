@@ -1,18 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IconAdd } from '@components/icons';
+import { IconBackArrow, IconHome, IconAdd } from '@components/icons';
 import { flex, title03 } from '../../../styles/variable';
 
-type SubPageProps = {
+type SubMainTopProps = {
 	title: string;
-	onClick?: () => void;
 };
 
-const SubPageTitle = ({ title, onClick }: SubPageProps) => {
+const TopSubMain = ({ title }: SubMainTopProps) => {
 	return (
 		<SubMain>
-			<h2>{title}</h2>
-			<AddBtn type="button" onClick={onClick}>
+			<button>
+				<IconBackArrow />
+			</button>
+			<button>
+				<IconHome />
+			</button>
+			<button className="title">
+				<h2>{title}</h2>
+			</button>
+			<AddBtn>
 				<IconAdd />
 				<span>추가</span>
 			</AddBtn>
@@ -20,23 +27,22 @@ const SubPageTitle = ({ title, onClick }: SubPageProps) => {
 	);
 };
 
-export default SubPageTitle;
+export default TopSubMain;
 
 const SubMain = styled.div`
 	${flex()};
 	width: 375px;
 	height: 52px;
-	padding: 0 20px 0 60px;
+	padding: 0 20px;
 	background: ${({ theme }) => theme.colors.white};
 
-	h2 {
-		${title03()};
-		width: 200px;
+	.title {
+		width: 150px;
 		height: 52px;
 		margin: auto;
-		padding: 0 10px;
-		text-align: center;
-		line-height: 3.4;
+		${title03()};
+		padding: 0 10px 0 0;
+		line-height: 0.5;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;

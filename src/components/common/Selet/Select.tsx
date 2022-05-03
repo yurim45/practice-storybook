@@ -56,7 +56,7 @@ const Inner = styled.div`
 		top: -28px;
 		right: -305px;
 		width: 0;
-		color: ${({ theme }) => theme.colors.txt999};
+		color: ${({ theme }) => theme.colors.txt333};
 		z-index: 2;
 	}
 `;

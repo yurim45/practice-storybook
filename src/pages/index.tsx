@@ -25,7 +25,8 @@ import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
 import {
 	Select,
 	TopCommon,
-	SubMainTop,
+	TopSubMain,
+	TopFullPopup,
 	SubPageTitle,
 	TabMenu,
 } from '@components/common/index';
@@ -68,8 +69,8 @@ const Home: NextPage = () => {
 				<h1>Next + Storybook Test Page</h1>
 				<section>
 					<TopCommon title="타이틀미정" />
-					<SubMainTop title="components" />
-					<SubMainTop title="터치영역 텍스트패팅 10 생략지점점점점" />
+					<TopSubMain title="신용카드 등" />
+					<TopFullPopup title="타이틀영역" />
 					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
 					<Button label="클릭" color="white" bgColor="primary" radius={10} />
 
