@@ -73,7 +73,6 @@ const Home: NextPage = () => {
 					<TopFullPopup title="타이틀영역" />
 					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
 					<Button label="클릭" color="white" bgColor="primary" radius={10} />
-
 					<Button
 						label="수정"
 						size="small"
@@ -95,18 +94,30 @@ const Home: NextPage = () => {
 						bgColor="bgBtnExcept"
 						radius={14}
 					/>
-					<TabMenuWrapper>
-						<TabMenu
-							data={[
-								{ id: 1, value: '일반공제' },
-								{ id: 2, value: '추가공제' },
-							]}
-							components={{
-								1: <></>,
-								2: <></>,
-							}}
-						/>
-					</TabMenuWrapper>
+					<TabMenu
+						data={[
+							{ id: 1, value: '일반공제', alert: true },
+							{ id: 2, value: '추가공제', alert: false },
+						]}
+						components={{
+							1: <></>,
+							2: <></>,
+						}}
+					/>
+					<TabMenu
+						data={[
+							{ id: 1, value: '신용카드', alert: true },
+							{ id: 2, value: '직불카드', alert: false },
+							{ id: 3, value: '현금영수증', alert: false },
+							{ id: 4, value: '제로페이', alert: false },
+						]}
+						components={{
+							1: <></>,
+							2: <></>,
+							3: <></>,
+							4: <></>,
+						}}
+					/>
 					<form onSubmit={handleSubmit(handleUserInfo)}>
 						<TextInput
 							register={register('name')}
@@ -194,9 +205,4 @@ const Main = styled.main`
 		font-size: ${({ theme }) => theme.textSize.m};
 		font-weight: 700;
 	}
-`;
-
-const TabMenuWrapper = styled.div`
-	margin: auto;
-	width: 100%;
 `;

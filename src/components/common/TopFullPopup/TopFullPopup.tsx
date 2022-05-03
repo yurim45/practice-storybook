@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { IconSearch, IconClose } from '@components/icons';
+import { IconClose } from '@components/icons';
 import { flex, title03 } from '../../../styles/variable';
 
 type SubMainTopProps = {

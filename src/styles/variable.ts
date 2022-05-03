@@ -13,38 +13,72 @@ export const flex = (
 
 export const title01 = () => css`
 	font-weight: 700;
-	font-size: 19px;
-	line-height: 140%;
+	font-size: 21px;
 	letter-spacing: -0.2px;
-	color: #000000;
+	color: ${({ theme }) => theme.colors.black};
 `;
 
 export const title02 = () => css`
 	font-weight: 700;
-	font-size: 17px;
-	line-height: 145%;
+	font-size: 19px;
 	letter-spacing: -0.2px;
-	color: #000000;
+	color: ${({ theme }) => theme.colors.black};
 `;
 
 export const title03 = () => css`
+	font-weight: 700;
+	font-size: 17px;
+	letter-spacing: -0.2px;
+	color: ${({ theme }) => theme.colors.black};
+`;
+
+export const title04 = () => css`
+	font-weight: 700;
+	font-size: 16px;
+	letter-spacing: -0.2px;
+	color: ${({ theme }) => theme.colors.black};
+`;
+
+export const title05 = () => css`
 	font-weight: 600;
 	font-size: 15px;
-	line-height: 150%;
 	letter-spacing: -0.2px;
-	color: #000000;
+	color: ${({ theme }) => theme.colors.black};
 `;
 
-export const textbody = () => css`
-	color: ${({ theme }) => theme.colors.txt555};
+export const title06 = () => css`
+	font-weight: 600;
+	font-size: 14px;
+	letter-spacing: -0.2px;
+	color: ${({ theme }) => theme.colors.black};
 `;
 
-export const textDesc = () => css`
-	color: ${({ theme }) => theme.colors.txt777};
+export const body01 = () => css`
+	font-weight: 400;
+	font-size: 15px;
+	letter-spacing: -0.2px;
+	color: ${({ theme }) => theme.colors.black};
 `;
 
-export const textDisabled = () => css`
-	color: ${({ theme }) => theme.colors.txt999};
+export const body02 = () => css`
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: -0.2px;
+	color: ${({ theme }) => theme.colors.black};
+`;
+
+export const body03 = () => css`
+	font-weight: 400;
+	font-size: 13px;
+	letter-spacing: -0.2px;
+	color: ${({ theme }) => theme.colors.black};
+`;
+
+export const body04 = () => css`
+	font-weight: 500;
+	font-size: 15px;
+	letter-spacing: -0.2px;
+	color: ${({ theme }) => theme.colors.black};
 `;
 
 export const inputStyle = () => css`

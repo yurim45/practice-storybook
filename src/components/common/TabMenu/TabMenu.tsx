@@ -5,7 +5,7 @@ import { IconAlert } from '@components/icons';
 import { flex } from '@styles/variable';
 
 type TabProps = {
-	data: { id: number; value: string }[];
+	data: { id: number; value: string; alert: boolean }[];
 	components: any;
 };
 
@@ -13,24 +13,29 @@ const TabMenu = ({ data, components }: TabProps) => {
 	const [tab, setTab] = useState(1);
 
 	return (
-		<div>
-			{data?.map(({ id, value }) => (
-				<Tab key={id} active={id === tab} onClick={() => setTab(id)}>
-					<div>
-						<IconAlert />
+		<TabMenuWrapper>
+			{data?.map(({ id, value, alert }) => (
+				<Tab
+					key={id}
+					active={id === tab}
+					length={data?.length}
+					onClick={() => setTab(id)}
+				>
+					<Text>
+						{alert && <IconAlert />}
 						{value}
-					</div>
+					</Text>
 				</Tab>
 			))}
 			<div>{components[tab]}</div>
-		</div>
+		</TabMenuWrapper>
 	);
 };
 
 export default TabMenu;
 
-const Tab = styled.button<{ active: boolean }>`
-	width: 50%;
+const Tab = styled.button<{ active: boolean; length: number }>`
+	width: ${({ length }) => `${100 / length}%`};
 	height: 50px;
 	padding: 16px auto 19px;
 	background: #fff;
@@ -42,8 +47,10 @@ const Tab = styled.button<{ active: boolean }>`
 	letter-spacing: -0.2px;
 	border-bottom: ${({ active }) =>
 		active && `2px solid ${theme.colors.txtGreen}`};
-
-	div {
-		${flex()};
-	}
 `;
+
+const Text = styled.div`
+	${flex()};
+`;
+
+const TabMenuWrapper = styled.div``;
