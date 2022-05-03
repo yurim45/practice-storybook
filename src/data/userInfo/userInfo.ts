@@ -7,7 +7,7 @@ const CLEAR = 'CLEAR';
 // 액션 생성 함수
 export const getUserInfo = (value: string) => {
 	return (dispatch: any) => {
-		dispatch({ type: ADD_USER_INFO, data: value });
+		dispatch({ type: ADD_USER_INFO, payload: value });
 	};
 };
 
@@ -37,7 +37,11 @@ export const userInfo = (
 			const nextId = state?.length > 0 ? state?.length + 1 : 1;
 			return [
 				...state,
-				{ id: nextId, name: action?.data?.name, email: action?.data?.email },
+				{
+					id: nextId,
+					name: action?.payload?.name,
+					email: action?.payload?.email,
+				},
 			];
 		case CLEAR:
 			return INITIAL_STATE;

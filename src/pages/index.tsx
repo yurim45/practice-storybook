@@ -22,7 +22,13 @@ import {
 	IconRefresh,
 } from '@components/icons/index';
 import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
-import { SubMainTop, SubPageTitle, TabMenu } from '@components/common/index';
+import {
+	Select,
+	TopCommon,
+	SubMainTop,
+	SubPageTitle,
+	TabMenu,
+} from '@components/common/index';
 import { Button, TextInput, SearchInput } from '@elem/index';
 import { getUserInfo } from '@data/userInfo/userInfo';
 import { useForm } from 'react-hook-form';
@@ -39,6 +45,7 @@ const Home: NextPage = () => {
 			name: '',
 			email: '',
 			search: '',
+			eduCd: '01',
 		},
 	});
 
@@ -60,6 +67,7 @@ const Home: NextPage = () => {
 			<Main>
 				<h1>Next + Storybook Test Page</h1>
 				<section>
+					<TopCommon title="타이틀미정" />
 					<SubMainTop title="components" />
 					<SubMainTop title="터치영역 텍스트패팅 10 생략지점점점점" />
 					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
@@ -111,7 +119,19 @@ const Home: NextPage = () => {
 							placeholder="입력 대기_플레이스 홀더"
 							iconHelp={true}
 						/>
-						<SearchInput register={register('search')} />
+						<Select
+							register={register('eduCd')}
+							title="교육비 종류"
+							data={[
+								{ id: '1', value: '01', name: '유치원' },
+								{ id: '2', value: '02', name: '초중고등학교' },
+								{ id: '3', value: '03', name: '대학교' },
+								{ id: '4', value: '04', name: '대학원' },
+								{ id: '5', value: '05', name: '현장체험학습비' },
+								{ id: '6', value: '06', name: '교복구입' },
+								{ id: '7', value: '07', name: '장애인특수교육비' },
+							]}
+						/>
 						<Button
 							label="추가하기"
 							type="submit"
@@ -120,6 +140,7 @@ const Home: NextPage = () => {
 							radius={10}
 						/>
 					</form>
+					<SearchInput register={register('search')} />
 
 					<SubPageTitle title="SVG Icons" />
 					<IconNotice />
@@ -172,11 +193,6 @@ const Main = styled.main`
 		font-size: ${({ theme }) => theme.textSize.m};
 		font-weight: 700;
 	}
-`;
-
-const ButtonWrapper = styled.div`
-	margin: auto;
-	width: 100%;
 `;
 
 const TabMenuWrapper = styled.div`

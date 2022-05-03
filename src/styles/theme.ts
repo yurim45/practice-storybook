@@ -30,6 +30,7 @@ const colors = {
 	bgColor2: '#e5e5e5',
 	mainBgColor: '#EEEEEE',
 	white: '#ffffff',
+	black: '#000000',
 	borderColor: '#E5E5E5',
 };
 
