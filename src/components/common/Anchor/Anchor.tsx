@@ -17,7 +17,7 @@ const Anchor = ({ register, name, data, color = 'green' }: TabProps) => {
 				return (
 					<Label key={i} color={color}>
 						<Btn {...register} type="radio" value={btn.value} name={name} />
-						<Text>{btn?.text}</Text>
+						<span>{btn?.text}</span>
 					</Label>
 				);
 			})}
@@ -37,8 +37,6 @@ const Btn = styled.input`
 	}
 `;
 
-const Text = styled.span``;
-
 const Label = styled.label<{ color: string }>`
 	input[type='radio'] + span {
 		display: inline-block;
@@ -51,7 +49,6 @@ const Label = styled.label<{ color: string }>`
 		font-size: 14px;
 		font-weight: 500;
 		text-align: center;
-		line-height: 1.2;
 		border-radius: 5px;
 		cursor: pointer;
 	}
