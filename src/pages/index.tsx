@@ -29,6 +29,7 @@ import {
 	TopFullPopup,
 	SubPageTitle,
 	TabMenu,
+	Anchor,
 } from '@components/common/index';
 import { Button, TextInput, SearchInput } from '@elem/index';
 import { getUserInfo } from '@data/userInfo/userInfo';
@@ -47,10 +48,13 @@ const Home: NextPage = () => {
 			email: '',
 			search: '',
 			eduCd: '01',
+			cardCd: '1',
+			cd: '1',
 		},
 	});
 
 	const handleUserInfo = (data: any) => {
+		console.log('data', data);
 		dispatch(getUserInfo(data));
 		reset();
 	};
@@ -117,6 +121,27 @@ const Home: NextPage = () => {
 							3: <></>,
 							4: <></>,
 						}}
+					/>
+					<Anchor
+						register={register('cardCd')}
+						name="cardCd"
+						data={[
+							{ value: '1', text: '일반' },
+							{ value: '2', text: '전통시장' },
+							{ value: '3', text: '대중교통' },
+							{ value: '4', text: '도서 공연' },
+						]}
+					/>
+					<Anchor
+						register={register('cd')}
+						name="cd"
+						data={[
+							{ value: '1', text: '일반' },
+							{ value: '2', text: '전통시장' },
+							{ value: '3', text: '대중교통' },
+							{ value: '4', text: '도서 공연' },
+						]}
+						color="red"
 					/>
 					<form onSubmit={handleSubmit(handleUserInfo)}>
 						<TextInput

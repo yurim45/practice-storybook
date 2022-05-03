@@ -13,7 +13,7 @@ const TabMenu = ({ data, components }: TabProps) => {
 	const [tab, setTab] = useState(1);
 
 	return (
-		<TabMenuWrapper>
+		<div>
 			{data?.map(({ id, value, alert }) => (
 				<Tab
 					key={id}
@@ -28,7 +28,7 @@ const TabMenu = ({ data, components }: TabProps) => {
 				</Tab>
 			))}
 			<div>{components[tab]}</div>
-		</TabMenuWrapper>
+		</div>
 	);
 };
 
@@ -52,5 +52,3 @@ const Tab = styled.button<{ active: boolean; length: number }>`
 const Text = styled.div`
 	${flex()};
 `;
-
-const TabMenuWrapper = styled.div``;
