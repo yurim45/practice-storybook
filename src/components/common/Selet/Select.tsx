@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { UseFormRegisterReturn } from 'react-hook-form';
-import { inputStyle } from '@styles/variable';
+import { inputStyle, title05 } from '@styles/variable';
 import { theme } from '@styles/theme';
 
 type TField = {
@@ -63,11 +63,7 @@ const Inner = styled.div`
 
 const Title = styled.div`
 	padding: 12px 3px 12px 0;
-	color: ${({ theme }) => theme.colors.txt333};
-	font-size: 15px;
-	font-weight: 600;
-	line-height: 150%;
-	letter-spacing: -0.2px;
+	${title05()};
 `;
 
 const SelectItem = styled.select`

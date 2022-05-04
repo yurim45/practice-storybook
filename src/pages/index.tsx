@@ -20,6 +20,8 @@ import {
 	IconClose,
 	IconBackArrow,
 	IconRefresh,
+	IconCheckSmall,
+	IconCheckBig,
 } from '@components/icons/index';
 import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
 import {
@@ -31,7 +33,14 @@ import {
 	TabMenu,
 	Anchor,
 } from '@components/common/index';
-import { Button, TextInput, SearchInput } from '@elem/index';
+import {
+	Button,
+	TextInput,
+	SearchInput,
+	Radio,
+	RadioText,
+	CheckText,
+} from '@elem/index';
 import { getUserInfo } from '@data/userInfo/userInfo';
 import { useForm } from 'react-hook-form';
 
@@ -50,6 +59,9 @@ const Home: NextPage = () => {
 			eduCd: '01',
 			cardCd: '1',
 			cd: '1',
+			disabledCode: 'N',
+			resideyn: 'Y',
+			nhiExceptionYn: 'N',
 		},
 	});
 
@@ -76,28 +88,12 @@ const Home: NextPage = () => {
 					<TopSubMain title="신용카드 등" />
 					<TopFullPopup title="타이틀영역" />
 					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
-					<Button label="클릭" color="white" bgColor="primary" radius={10} />
-					<Button
-						label="수정"
-						size="small"
-						color="white"
-						bgColor="primary"
-						radius={14}
-					/>
-					<Button
-						label="가족연결"
-						size="small"
-						color="white"
-						bgColor="primary2"
-						radius={14}
-					/>
-					<Button
-						label="제외"
-						size="small"
-						color="txtBtnExcept"
-						bgColor="bgBtnExcept"
-						radius={14}
-					/>
+					<Button label="클릭" />
+					<Button label="클릭" disabled={true} />
+					<Button label="수정" size="small" />
+					<Button label="가족연결" size="small" disabled={true} />
+					<Button label="제외" size="small" style="except" />
+					<Button label="제외" size="small" style="except" disabled={true} />
 					<TabMenu
 						data={[
 							{ id: 1, value: '일반공제', alert: true },
@@ -169,16 +165,51 @@ const Home: NextPage = () => {
 								{ id: '7', value: '07', name: '장애인특수교육비' },
 							]}
 						/>
-						<Button
-							label="추가하기"
-							type="submit"
-							color="white"
-							bgColor="primary2"
-							radius={10}
+						<Radio
+							register={register('disabledCode')}
+							name="disabledCode"
+							data={[
+								{ value: 'Y', text: '예' },
+								{ value: 'N', text: '아니오' },
+							]}
 						/>
+						<Radio
+							register={register('resideyn')}
+							name="resideyn"
+							title="거주자"
+							data={[
+								{ value: 'Y', text: '예' },
+								{ value: 'N', text: '아니오' },
+							]}
+							disabled={true}
+						/>
+						<RadioText
+							register={register('nhiExceptionYn')}
+							name="nhiExceptionYn"
+							data={[
+								{
+									value: 'Y',
+									text: '예, 맞습니다.',
+								},
+								{ value: 'N', text: '아니오, 아닙니다.' },
+							]}
+						/>
+						<Button label="추가하기" type="submit" />
 					</form>
+					<CheckText
+						register={register('nhiExceptionYn')}
+						name="nhiExceptionYn"
+						data={[
+							{
+								value: '1',
+								text: '기본공제',
+							},
+							{ value: '2', text: '한부모공제' },
+							{ value: '3', text: '경로우대공제' },
+							{ value: '4', text: '부녀자공제' },
+						]}
+					/>
 					<SearchInput register={register('search')} />
-
 					<SubPageTitle title="SVG Icons" />
 					<IconNotice />
 					<IconAlert />
@@ -199,6 +230,10 @@ const Home: NextPage = () => {
 					<IconClose />
 					<IconBackArrow />
 					<IconRefresh />
+					<IconCheckSmall on={true} />
+					<IconCheckSmall on={false} />
+					<IconCheckBig on={true} />
+					<IconCheckBig on={false} />
 
 					<SubPageTitle title="Tags" />
 					<TagListCategory text="산후조리원" color="green" />

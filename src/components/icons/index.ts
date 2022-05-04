@@ -13,6 +13,8 @@ import IconHome from './IconHome';
 import IconClose from './IconClose';
 import IconBackArrow from './IconBackArrow';
 import IconRefresh from './IconRefresh';
+import IconCheckSmall from './IconCheckSmall';
+import IconCheckBig from './IconCheckBig';
 
 export {
 	IconNotice,
@@ -30,4 +32,6 @@ export {
 	IconClose,
 	IconBackArrow,
 	IconRefresh,
+	IconCheckSmall,
+	IconCheckBig,
 };

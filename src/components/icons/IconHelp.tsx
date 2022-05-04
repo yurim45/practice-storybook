@@ -1,6 +1,7 @@
 type IconProps = {
 	width?: number;
 };
+
 const IconHelp = ({ width = 14 }: IconProps) => {
 	return (
 		<svg

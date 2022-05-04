@@ -61,6 +61,12 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+  button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  }
+
   pre {
     white-space: pre-line;
   }
@@ -69,6 +75,24 @@ const GlobalStyle = createGlobalStyle`
     display: block;
     width: 100%;
     height: 100%;
+  }
+
+  :root {
+    --primary: #00C092;
+    --black: #000000;
+    --darkgrey: #757575;
+    --grey: #b7b7b7;
+    --line: #e5e5e5;
+    --white: #ffffff;
+
+    --txt333: #333333;
+    --txt555: #555555;
+    --txt777: #777777;
+    --txt999: #999999;
+    --txtGreen: #00B98D;
+    --txtRed: #F85151;
+    --txtBlue: #0085FF;
+    --txtDim: #A5A5A5
   }
 `;
 

@@ -36,7 +36,7 @@ const SubMain = styled.div`
 		margin: auto;
 		padding: 0 10px;
 		text-align: center;
-		line-height: 2.9;
+		line-height: 2.5;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
