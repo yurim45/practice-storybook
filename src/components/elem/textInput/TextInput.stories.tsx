@@ -5,6 +5,7 @@ import TextInput from './TextInput';
 export default {
 	title: '컴포넌트/TextInput',
 	component: TextInput,
+	decorators: [(story) => <form>{story()}</form>],
 } as ComponentMeta<typeof TextInput>;
 
 const Template: ComponentStory<typeof TextInput> = (args) => (
