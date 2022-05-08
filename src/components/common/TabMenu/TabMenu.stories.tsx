@@ -13,14 +13,9 @@ export default {
 const Template: ComponentStory<typeof TabMenu> = ({ data, ...args }: any) => (
 	<TabMenu {...args}>
 		{data.map(({ id, value, alert }: any) => (
-			<button key={id}>
-				<div>
-					{alert && <svg></svg>}
-					{value}
-				</div>
-			</button>
+			<button {...args} value={value} alertkey={id}></button>
 		))}
-		{/* <div></div> */}
+		<div></div>
 	</TabMenu>
 );
 
