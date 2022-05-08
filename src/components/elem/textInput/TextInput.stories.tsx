@@ -8,7 +8,7 @@ export default {
 } as ComponentMeta<typeof TextInput>;
 
 const Template: ComponentStory<typeof TextInput> = (args) => (
-	// <TextInput {...args} />
+	<TextInput {...args} />
 );
 
 export const Primary = Template.bind({});

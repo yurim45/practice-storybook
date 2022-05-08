@@ -1,5 +1,5 @@
 import { IconSearch } from '@components/icons';
-import { inputStyle } from '@styles/variable';
+import { inputStyle } from '../../../styles/variable';
 import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 import styled from 'styled-components';

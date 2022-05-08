@@ -28,10 +28,15 @@ export default {
 	},
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = ({
+	style = 'default',
+	...args
+}) => <Button style={style} {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
 	label: '버튼',
-	style: 'default',
+	size: 'small',
+	type: 'button',
+	disabled: false,
 };

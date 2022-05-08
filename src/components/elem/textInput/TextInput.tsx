@@ -1,5 +1,5 @@
 import { IconHelp, IconStar } from '@components/icons';
-import { flex, inputStyle, title05 } from '@styles/variable';
+import { flex, inputStyle, title05 } from '../../../styles/variable';
 import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 import styled from 'styled-components';

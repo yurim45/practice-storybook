@@ -8,7 +8,7 @@ export default {
 } as ComponentMeta<typeof SearchInput>;
 
 const Template: ComponentStory<typeof SearchInput> = (args) => (
-	// <SearchInput {...args} />
+	<SearchInput {...args} />
 );
 
 export const Primary = Template.bind({});
