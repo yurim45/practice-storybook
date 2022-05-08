@@ -92,8 +92,13 @@ const Home: NextPage = () => {
 					<Button label="클릭" disabled={true} />
 					<Button label="수정" size="small" />
 					<Button label="가족연결" size="small" disabled={true} />
-					<Button label="제외" size="small" style="except" />
-					<Button label="제외" size="small" style="except" disabled={true} />
+					<Button label="제외" size="small" styleConcept="except" />
+					<Button
+						label="제외"
+						size="small"
+						styleConcept="except"
+						disabled={true}
+					/>
 					<TabMenu
 						data={[
 							{ id: 1, value: '일반공제', alert: true },

@@ -16,7 +16,7 @@ export default {
 			control: { type: 'radio' },
 			description: 'full: 화면 가로 사이즈, small: 네 글자 사이즈 ',
 		},
-		style: {
+		styleConcept: {
 			options: ['default', 'except'],
 			control: { type: 'radio' },
 			description: 'default: 기본 primary 버튼, except: 부정 버튼',
@@ -29,14 +29,14 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = ({
-	style = 'default',
+	styleConcept = 'default',
 	...args
-}) => <Button style={style} {...args} />;
+}) => <Button styleConcept={styleConcept} {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
 	label: '버튼',
+	styleConcept: 'default',
 	size: 'small',
-	type: 'button',
 	disabled: false,
 };
