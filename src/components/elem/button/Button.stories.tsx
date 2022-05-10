@@ -22,7 +22,6 @@ export default {
 			description: 'default: 기본 primary 버튼, except: 부정 버튼',
 		},
 		disabled: {
-			type: 'boolean',
 			control: { type: 'boolean' },
 		},
 	},
@@ -33,5 +32,4 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
 	label: '버튼',
-	style: 'default',
 };

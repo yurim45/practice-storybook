@@ -3,14 +3,14 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Check from './Check';
 
 // export default {
-// 	title: '컴포넌트/Radio',
-// 	component: Radio,
+// 	title: 'Elements/Check',
+// 	component: Check,
 // 	argTypes: {
 // 		title: { type: 'string' },
 // 	},
-// } as ComponentMeta<typeof Radio>;
+// } as ComponentMeta<typeof Check>;
 
-// const Template: ComponentStory<typeof Radio> = (args) => <Radio {...args} />;
+// const Template: ComponentStory<typeof Check> = (args) => <Check {...args} />;
 
 // export const Primary = Template.bind({});
 // Primary.args = {

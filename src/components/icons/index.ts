@@ -1,37 +1,39 @@
-import IconNotice from './IconNotice';
-import IconAlert from './IconAlert';
-import IconAdd from './IconAdd';
-import IconInputArrow from './IconInputArrow';
-import IconHelp from './IconHelp';
-import IconSearch from './IconSearch';
-import IconAlertBell from './IconAlertBell';
-import IconTopMenu from './IconTopMenu';
-import IconStar from './IconStar';
-import IconUpload from './IconUpload';
-import IconOpenArrow from './IconOpenArrow';
-import IconHome from './IconHome';
-import IconClose from './IconClose';
-import IconBackArrow from './IconBackArrow';
-import IconRefresh from './IconRefresh';
-import IconCheckSmall from './IconCheckSmall';
-import IconCheckBig from './IconCheckBig';
+import Notice from './IconNotice';
+import Alert from './IconAlert';
+import Add from './IconAdd';
+import InputArrow from './IconInputArrow';
+import Help from './IconHelp';
+import Search from './IconSearch';
+import AlertBell from './IconAlertBell';
+import TopMenu from './IconTopMenu';
+import Star from './IconStar';
+import Upload from './IconUpload';
+import OpenArrow from './IconOpenArrow';
+import Home from './IconHome';
+import Close from './IconClose';
+import BackArrow from './IconBackArrow';
+import Refresh from './IconRefresh';
+import CheckSmall from './IconCheckSmall';
+import CheckBig from './IconCheckBig';
 
-export {
-	IconNotice,
-	IconAlert,
-	IconAdd,
-	IconInputArrow,
-	IconHelp,
-	IconSearch,
-	IconAlertBell,
-	IconTopMenu,
-	IconStar,
-	IconUpload,
-	IconOpenArrow,
-	IconHome,
-	IconClose,
-	IconBackArrow,
-	IconRefresh,
-	IconCheckSmall,
-	IconCheckBig,
+const icons = {
+	Notice,
+	Alert,
+	Add,
+	InputArrow,
+	Help,
+	Search,
+	AlertBell,
+	TopMenu,
+	Star,
+	Upload,
+	OpenArrow,
+	Home,
+	Close,
+	BackArrow,
+	Refresh,
+	CheckSmall,
+	CheckBig,
 };
+
+export default icons;

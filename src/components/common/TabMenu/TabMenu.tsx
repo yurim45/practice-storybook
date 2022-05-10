@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { theme } from '@styles/theme';
-import { IconAlert } from '@components/icons';
+import icons from '@components/icons/index';
 import { flex } from '@styles/variable';
 
 type TabProps = {
@@ -22,7 +22,7 @@ const TabMenu = ({ data, components }: TabProps) => {
 					onClick={() => setTab(id)}
 				>
 					<Text>
-						{alert && <IconAlert />}
+						{alert && <icons.Alert />}
 						{value}
 					</Text>
 				</Tab>

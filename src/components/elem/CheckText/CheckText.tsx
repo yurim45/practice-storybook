@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { flex, title05 } from '@styles/variable';
 import { UseFormRegisterReturn } from 'react-hook-form';
-import { IconCheckSmall } from '@components/icons';
+import icons from '@components/icons/index';
 
 type TRadio = {
 	register: UseFormRegisterReturn;
@@ -19,8 +19,6 @@ export default function CheckText({
 	disabled,
 	title,
 }: TRadio) {
-	console.log(register);
-
 	return (
 		<div>
 			{title && <Title>{title}</Title>}
@@ -36,7 +34,7 @@ export default function CheckText({
 								disabled={disabled}
 							/>
 							<span>
-								<IconCheckSmall width={10} /> {btn.text}
+								<icons.CheckSmall width={10} /> {btn.text}
 							</span>
 						</Label>
 					);
@@ -67,11 +65,23 @@ const InputGroup = styled.div`
 		border: 1px solid var(--bgColor2);
 		border-radius: 22px;
 		cursor: pointer;
+
+		path {
+			fill: none;
+			stroke-width: 1px;
+			stroke: var(--txt999);
+		}
 	}
 
 	input[type='checkbox']:checked + span {
 		color: var(--primary);
 		border: 1px solid var(--primary);
+
+		path {
+			fill: none;
+			stroke-width: 1px;
+			stroke: var(--primary);
+		}
 	}
 `;
 

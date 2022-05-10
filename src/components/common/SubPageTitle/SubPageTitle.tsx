@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IconAdd } from '@components/icons';
+import icons from '@components/icons/index';
 import { flex, title03 } from '../../../styles/variable';
 
 type SubPageProps = {
@@ -13,7 +13,7 @@ const SubPageTitle = ({ title, onClick }: SubPageProps) => {
 		<SubMain>
 			<h2>{title}</h2>
 			<AddBtn type="button" onClick={onClick}>
-				<IconAdd />
+				<icons.Add />
 				<span>추가</span>
 			</AddBtn>
 		</SubMain>

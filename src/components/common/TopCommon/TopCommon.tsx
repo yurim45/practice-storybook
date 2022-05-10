@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { IconSearch, IconTopMenu } from '@components/icons';
+import icons from '@components/icons/index';
 import { flex, title03 } from '../../../styles/variable';
 
 type SubMainTopProps = {
@@ -13,13 +13,13 @@ const TopCommon = ({ title }: SubMainTopProps) => {
 	return (
 		<SubMain>
 			<button>
-				<IconTopMenu on={true} />
+				<icons.TopMenu on={true} />
 			</button>
 			<button className="title" onClick={() => setOpen(!open)}>
 				<h2>{title}</h2>
 			</button>
 			<button>
-				<IconSearch width={24} color="black" />
+				<icons.Search width={24} color="black" />
 			</button>
 		</SubMain>
 	);

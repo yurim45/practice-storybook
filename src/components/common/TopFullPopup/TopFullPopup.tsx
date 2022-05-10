@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { IconClose } from '@components/icons';
+import icons from '@components/icons/index';
 import { flex, title03 } from '../../../styles/variable';
 
 type SubMainTopProps = {
@@ -13,7 +13,7 @@ const TopFullPopup = ({ title }: SubMainTopProps) => {
 	return (
 		<SubMain>
 			<button>
-				<IconClose />
+				<icons.Close />
 			</button>
 			<button className="title" onClick={() => setOpen(!open)}>
 				<h2>{title}</h2>

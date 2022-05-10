@@ -1,4 +1,4 @@
-import { IconSearch } from '@components/icons';
+import icons from '@components/icons/index';
 import { inputStyle } from '@styles/variable';
 import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
@@ -16,7 +16,7 @@ const SearchInput = ({
 	return (
 		<Inner>
 			<IconWrapper>
-				<IconSearch color="#C5C5C5" width={18} />
+				<icons.Search color="#C5C5C5" width={18} />
 			</IconWrapper>
 			<InnerInput {...register} type="text" placeholder={placeholder} />
 		</Inner>

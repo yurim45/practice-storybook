@@ -5,6 +5,7 @@ import TopSubMain from './TopSubMain/TopSubMain';
 import TopFullPopup from './TopFullPopup/TopFullPopup';
 import SubPageTitle from './SubPageTitle/SubPageTitle';
 import Select from './Selet/Select';
+import Stepper from './Stepper/Stepper';
 
 export {
 	Anchor,
@@ -14,4 +15,5 @@ export {
 	TopFullPopup,
 	SubPageTitle,
 	Select,
+	Stepper,
 };

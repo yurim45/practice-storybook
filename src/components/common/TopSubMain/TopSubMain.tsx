@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IconBackArrow, IconHome, IconAdd } from '@components/icons';
+import icons from '@components/icons/index';
 import { flex, title03 } from '../../../styles/variable';
 
 type SubMainTopProps = {
@@ -11,16 +11,16 @@ const TopSubMain = ({ title }: SubMainTopProps) => {
 	return (
 		<SubMain>
 			<button>
-				<IconBackArrow />
+				<icons.BackArrow />
 			</button>
 			<button>
-				<IconHome />
+				<icons.Home />
 			</button>
 			<button className="title">
 				<h2>{title}</h2>
 			</button>
 			<AddBtn>
-				<IconAdd />
+				<icons.Add />
 				<span>추가</span>
 			</AddBtn>
 		</SubMain>

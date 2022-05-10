@@ -4,25 +4,7 @@ import { AnyAction } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import styled from 'styled-components';
-import {
-	IconAdd,
-	IconAlert,
-	IconAlertBell,
-	IconHelp,
-	IconInputArrow,
-	IconNotice,
-	IconSearch,
-	IconStar,
-	IconTopMenu,
-	IconUpload,
-	IconOpenArrow,
-	IconHome,
-	IconClose,
-	IconBackArrow,
-	IconRefresh,
-	IconCheckSmall,
-	IconCheckBig,
-} from '@components/icons/index';
+import icons from '@components/icons/index';
 import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
 import {
 	Select,
@@ -32,14 +14,16 @@ import {
 	SubPageTitle,
 	TabMenu,
 	Anchor,
+	Stepper,
 } from '@components/common/index';
 import {
 	Button,
-	TextInput,
+	Input,
 	SearchInput,
 	Radio,
 	RadioText,
 	CheckText,
+	Check,
 } from '@elem/index';
 import { getUserInfo } from '@data/userInfo/userInfo';
 import { useForm } from 'react-hook-form';
@@ -51,7 +35,7 @@ const Home: NextPage = () => {
 	const dispatch: AppDispatch = useDispatch();
 	const userInfo = useSelector((state: any) => state?.userInfo);
 
-	const { register, handleSubmit, reset } = useForm({
+	const { register, handleSubmit, reset, watch } = useForm({
 		defaultValues: {
 			name: '',
 			email: '',
@@ -62,6 +46,8 @@ const Home: NextPage = () => {
 			disabledCode: 'N',
 			resideyn: 'Y',
 			nhiExceptionYn: 'N',
+			yn: '0',
+			checkyn: '0',
 		},
 	});
 
@@ -88,8 +74,18 @@ const Home: NextPage = () => {
 					<TopSubMain title="신용카드 등" />
 					<TopFullPopup title="타이틀영역" />
 					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
+
 					<Button label="클릭" />
 					<Button label="클릭" disabled={true} />
+					<Button
+						label={
+							<>
+								<icons.Add color="#fff" />
+								추가
+							</>
+						}
+						size="small"
+					/>
 					<Button label="수정" size="small" />
 					<Button label="가족연결" size="small" disabled={true} />
 					<Button label="제외" size="small" style="except" />
@@ -140,17 +136,26 @@ const Home: NextPage = () => {
 						color="red"
 					/>
 					<form onSubmit={handleSubmit(handleUserInfo)}>
-						<TextInput
+						<Input
 							register={register('name')}
+							name="name"
 							title="이름"
 							placeholder="입력 대기_플레이스 홀더"
 							iconStar={true}
 						/>
-						<TextInput
+						<Input
 							register={register('email')}
+							name="email"
 							title="메일"
 							placeholder="입력 대기_플레이스 홀더"
 							iconHelp={true}
+						/>
+						<Input
+							register={register('search')}
+							name="email"
+							placeholder="검색어를 입력하세요"
+							iconHelp={true}
+							prefix={<icons.Search color="#C5C5C5" width={18} />}
 						/>
 						<Select
 							register={register('eduCd')}
@@ -197,8 +202,8 @@ const Home: NextPage = () => {
 						<Button label="추가하기" type="submit" />
 					</form>
 					<CheckText
-						register={register('nhiExceptionYn')}
-						name="nhiExceptionYn"
+						register={register('yn')}
+						name="yn"
 						data={[
 							{
 								value: '1',
@@ -209,31 +214,56 @@ const Home: NextPage = () => {
 							{ value: '4', text: '부녀자공제' },
 						]}
 					/>
+					<Check
+						register={register('checkyn')}
+						name="checkyn"
+						data={[
+							{
+								value: '1',
+								text: '기본공제',
+							},
+							{ value: '2', text: '한부모공제' },
+							{ value: '3', text: '경로우대공제' },
+							{ value: '4', text: '부녀자공제' },
+						]}
+					/>
+					<Stepper
+						data={[
+							{ id: 1, value: '세대주 여부' },
+							{ id: 2, value: '부양가족 확인' },
+							{ id: 3, value: '종전근무지' },
+						]}
+						components={{
+							1: <></>,
+							2: <></>,
+							3: <></>,
+						}}
+					/>
 					<SearchInput register={register('search')} />
 					<SubPageTitle title="SVG Icons" />
-					<IconNotice />
-					<IconAlert />
-					<IconAdd />
-					<IconInputArrow color="#333333" direction="up" />
-					<IconInputArrow color="#999999" direction="down" />
-					<IconHelp width={14} />
-					<IconSearch width={18} />
-					<IconAlertBell on={true} />
-					<IconAlertBell on={false} />
-					<IconTopMenu on={true} />
-					<IconTopMenu on={false} />
-					<IconStar />
-					<IconUpload />
-					<IconOpenArrow open={true} />
-					<IconOpenArrow open={false} />
-					<IconHome />
-					<IconClose />
-					<IconBackArrow />
-					<IconRefresh />
-					<IconCheckSmall on={true} />
-					<IconCheckSmall on={false} />
-					<IconCheckBig on={true} />
-					<IconCheckBig on={false} />
+					<icons.Notice />
+					<icons.Alert />
+					<icons.Add />
+					<icons.InputArrow color="#333333" direction="up" />
+					<icons.InputArrow color="#999999" direction="down" />
+					<icons.Help width={14} />
+					<icons.Search width={18} />
+					<icons.AlertBell on={true} />
+					<icons.AlertBell on={false} />
+					<icons.TopMenu on={true} />
+					<icons.TopMenu on={false} />
+					<icons.Star />
+					<icons.Upload />
+					<icons.OpenArrow open={true} />
+					<icons.OpenArrow open={false} />
+					<icons.Home />
+					<icons.Close />
+					<icons.BackArrow />
+					<icons.Refresh />
+					<icons.CheckSmall on={true} />
+					<icons.CheckSmall on={false} />
+					<icons.CheckBig on={true} />
+					<icons.CheckBig on={false} />
 
 					<SubPageTitle title="Tags" />
 					<TagListCategory text="산후조리원" color="green" />

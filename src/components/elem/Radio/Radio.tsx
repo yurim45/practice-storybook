@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { flex, title05 } from '@styles/variable';
+import { flex, title05 } from '../../../styles/variable';
 import { UseFormRegisterReturn } from 'react-hook-form';
-import { theme } from '@styles/theme';
+import radio from '../../icons/radio/index';
 
 type TRadio = {
 	register: UseFormRegisterReturn;
@@ -19,6 +19,7 @@ export default function Radio({
 	disabled,
 	title,
 }: TRadio) {
+	const [radioValue, setRadioValue] = useState<string>('N');
 	return (
 		<div>
 			{title && <Title>{title}</Title>}
@@ -32,7 +33,21 @@ export default function Radio({
 								value={btn.value}
 								name={name}
 								disabled={disabled}
+								onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+									setRadioValue((e.target as HTMLInputElement).value)
+								}
 							/>
+							{radioValue === btn?.value ? (
+								disabled ? (
+									<radio.RadioDimOn />
+								) : (
+									<radio.RadioOn />
+								)
+							) : disabled ? (
+								<radio.RadioDimOff />
+							) : (
+								<radio.RadioOff />
+							)}
 							<InnerText>{btn.text}</InnerText>
 						</Label>
 					);
@@ -57,7 +72,7 @@ const InputGroup = styled.div`
 
 const InnerInput = styled.input`
 	${flex()};
-	width: 24px;
+	/* width: 24px;
 	height: 24px;
 	background: var(--white);
 	border-radius: 50%;
@@ -77,8 +92,7 @@ const InnerInput = styled.input`
 	}
 
 	&:checked:before {
-		background: ${(props) =>
-			props.disabled ? '#E0E0E0' : `var(${'--primary'})`};
+		background: ${(props) => (props.disabled ? '#E0E0E0' : `var(${'--primary'})`)};
 	}
 
 	&:before {
@@ -87,7 +101,7 @@ const InnerInput = styled.input`
 		width: 60%;
 		height: 60%;
 		border-radius: 50%;
-	}
+	} */
 `;
 
 const InnerText = styled.div`

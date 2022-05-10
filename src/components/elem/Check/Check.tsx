@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { flex, title05 } from '@styles/variable';
 import { UseFormRegisterReturn } from 'react-hook-form';
-import { theme } from '@styles/theme';
+import check from '../../icons/check/index';
 
 type TRadio = {
 	register: UseFormRegisterReturn;
@@ -19,6 +19,9 @@ export default function Check({
 	disabled,
 	title,
 }: TRadio) {
+	const [checkValue, setCheckValue] = useState<string>('');
+	console.log();
+
 	return (
 		<div>
 			{title && <Title>{title}</Title>}
@@ -28,11 +31,25 @@ export default function Check({
 						<Label key={i}>
 							<InnerInput
 								{...register}
-								type="check"
+								type="checkbox"
 								value={btn.value}
 								name={name}
 								disabled={disabled}
+								// onClick={(e: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
+								// 	setCheckValue((e.target as HTMLInputElement).value)
+								// }
 							/>
+							{/* {checkValue === btn?.value ? (
+								disabled ? (
+									<check.CheckDimOn />
+								) : (
+									<check.CheckOn />
+								)
+							) : disabled ? (
+								<check.CheckDimOff />
+							) : (
+								<check.CheckOff />
+							)} */}
 							<InnerText>{btn.text}</InnerText>
 						</Label>
 					);
@@ -52,44 +69,35 @@ const Title = styled.div`
 const InputGroup = styled.div`
 	${flex('flex-start')};
 	flex-wrap: wrap;
-	width: 100%;
+	width: 200%;
 `;
 
 const InnerInput = styled.input`
-	${flex()};
-	width: 24px;
-	height: 24px;
+	width: 20px;
+	height: 20px;
 	background: var(--white);
-	border-radius: 50%;
-	box-shadow: 0 0 0 0.5px var(--txtDim);
+	border-radius: 4px;
 	cursor: pointer;
 
 	:disabled {
 		background: '#F8F8F8';
+		border: 1px solid var(--line);
 	}
 
-	&:checked {
-		box-shadow: 0 0 0 1px var(--primary);
-
-		:disabled {
-			box-shadow: var(--mainBgColor);
-		}
-	}
-
-	&:checked:before {
+	:checked {
 		background: var(--primary);
+		color: var(--white);
+
+		&:after {
+			content: '✔';
+			padding: 5px;
+			line-height: 1.7;
+		}
 
 		:disabled {
-			background: '#E0E0E0';
+			background: #f8f8f8;
+			border: 1px solid var(--line);
 		}
-	}
-
-	&:before {
-		content: '';
-		display: block;
-		width: 60%;
-		height: 60%;
-		border-radius: 50%;
 	}
 `;
 
