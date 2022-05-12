@@ -88,8 +88,8 @@ const Home: NextPage = () => {
 					/>
 					<Button label="수정" size="small" />
 					<Button label="가족연결" size="small" disabled={true} />
-					<Button label="제외" size="small" style="except" />
-					<Button label="제외" size="small" style="except" disabled={true} />
+					<Button label="제외" size="small" theme="except" />
+					<Button label="제외" size="small" theme="except" disabled={true} />
 					<TabMenu
 						data={[
 							{ id: 1, value: '일반공제', alert: true },

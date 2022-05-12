@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import icons from '@components/icons/index';
 import { inputStyle } from '@styles/variable';
+=======
+import { IconSearch } from '@components/icons';
+import { inputStyle } from '../../../styles/variable';
+>>>>>>> de07985c6335f6e2ee666d0e225454cae73e90be
 import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 import styled from 'styled-components';

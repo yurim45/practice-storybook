@@ -1,12 +1,18 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { theme } from '@styles/theme';
 import icons from '@components/icons/index';
 import { flex } from '@styles/variable';
+=======
+import { theme } from '../../../styles/theme';
+import { IconAlert } from '@components/icons';
+import { flex } from '../../../styles/variable';
+>>>>>>> de07985c6335f6e2ee666d0e225454cae73e90be
 
 type TabProps = {
 	data: { id: number; value: string; alert: boolean }[];
-	components: any;
+	components?: any;
 };
 
 const TabMenu = ({ data, components }: TabProps) => {
