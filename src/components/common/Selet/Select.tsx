@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { UseFormRegisterReturn } from 'react-hook-form';
-import { inputStyle, title05 } from '@styles/variable';
+import { flex, inputStyle, title05 } from '@styles/variable';
 import { theme } from '@styles/theme';
+import icons from '@components/icons';
 
 type TField = {
 	id: number;
@@ -10,18 +11,28 @@ type TField = {
 	name: string;
 };
 
-type TSelect = {
+type SelectProps = {
 	register: UseFormRegisterReturn;
-	title: string;
-	data: any;
+	title?: string;
+	data: TField[];
+	isDisabled?: boolean;
+	iconHelp?: boolean;
+	iconStar?: boolean;
 	placeholder?: string;
-	disabled?: boolean;
 };
 
-const Select = ({ register, title, data, disabled }: TSelect): JSX.Element => {
+const Select = ({
+	register,
+	title,
+	data,
+	isDisabled = false,
+	placeholder = '선택하세요.',
+	iconHelp,
+	iconStar,
+}: SelectProps): JSX.Element => {
 	const formattedDatas: TField[] =
 		data &&
-		data.map((data: any) => {
+		data.map((data: TField) => {
 			return {
 				id: data.id,
 				value: data.value,
@@ -31,11 +42,18 @@ const Select = ({ register, title, data, disabled }: TSelect): JSX.Element => {
 
 	return (
 		<Inner>
-			<Title>{title}</Title>
-			<SelectItem disabled={disabled} {...register}>
-				<option value={'default'}>선택해주세요.</option>
+			{title && (
+				<TitleWrapper>
+					<Title>{title}</Title>
+					{iconHelp && <icons.Help width={14} />}
+					{iconStar && <icons.Star />}
+				</TitleWrapper>
+			)}
+
+			<SelectItem disabled={isDisabled} {...register}>
+				<option value={'default'}>{placeholder}</option>
 				{formattedDatas?.map((item: any) => (
-					<option value={item.value} key={item.id} disabled={item.id === '0'}>
+					<option value={item.value} key={item.id}>
 						{item.name}
 					</option>
 				))}
@@ -64,6 +82,10 @@ const Inner = styled.div`
 const Title = styled.div`
 	padding: 12px 3px 12px 0;
 	${title05()};
+`;
+
+const TitleWrapper = styled.div`
+	${flex('flex-start', 'center')};
 `;
 
 const SelectItem = styled.select`

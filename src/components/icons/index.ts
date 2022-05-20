@@ -1,20 +1,21 @@
-import Notice from './IconNotice';
-import Alert from './IconAlert';
-import Add from './IconAdd';
-import InputArrow from './IconInputArrow';
-import Help from './IconHelp';
-import Search from './IconSearch';
-import AlertBell from './IconAlertBell';
-import TopMenu from './IconTopMenu';
-import Star from './IconStar';
-import Upload from './IconUpload';
-import OpenArrow from './IconOpenArrow';
-import Home from './IconHome';
-import Close from './IconClose';
-import BackArrow from './IconBackArrow';
-import Refresh from './IconRefresh';
-import CheckSmall from './IconCheckSmall';
-import CheckBig from './IconCheckBig';
+import Notice from './Notice';
+import Alert from './Alert';
+import Add from './Add';
+import InputArrow from './InputArrow';
+import Help from './Help';
+import Search from './Search';
+import AlertBell from './AlertBell';
+import TopMenu from './TopMenu';
+import Star from './Star';
+import Upload from './Upload';
+import OpenArrow from './OpenArrow';
+import Home from './Home';
+import Close from './Close';
+import BackArrow from './BackArrow';
+import Refresh from './Refresh';
+import CheckSmall from './CheckSmall';
+import CheckBig from './CheckBig';
+import Password from './password/index';
 
 const icons = {
 	Notice,
@@ -34,6 +35,7 @@ const icons = {
 	Refresh,
 	CheckSmall,
 	CheckBig,
+	Password,
 };
 
 export default icons;

@@ -6,16 +6,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import styled from 'styled-components';
 import icons from '@components/icons/index';
 import { TagListCategory, TagNts, TagUserEdit } from '@components/tags';
-import {
-	Select,
-	TopCommon,
-	TopSubMain,
-	TopFullPopup,
-	SubPageTitle,
-	TabMenu,
-	Anchor,
-	Stepper,
-} from '@components/common/index';
+import { Select, TabMenu, Anchor, Stepper } from '@components/common/index';
 import {
 	Button,
 	Input,
@@ -70,26 +61,8 @@ const Home: NextPage = () => {
 			<Main>
 				<h1>Next + Storybook Test Page</h1>
 				<section>
-					<TopCommon title="타이틀미정" />
-					<TopSubMain title="신용카드 등" />
-					<TopFullPopup title="타이틀영역" />
-					<SubPageTitle title="터치영역 텍스트패팅 10 생략지점점점점생략지점점점점" />
-
-					<Button label="클릭" />
-					<Button label="클릭" disabled={true} />
-					<Button
-						label={
-							<>
-								<icons.Add color="#fff" />
-								추가
-							</>
-						}
-						size="small"
-					/>
-					<Button label="수정" size="small" />
-					<Button label="가족연결" size="small" disabled={true} />
-					<Button label="제외" size="small" theme="except" />
-					<Button label="제외" size="small" theme="except" disabled={true} />
+					<Button label="클릭" variant="bigLong" />
+					<Button label="클릭" isDisabled={true} />
 					<TabMenu
 						data={[
 							{ id: 1, value: '일반공제', alert: true },
@@ -161,13 +134,13 @@ const Home: NextPage = () => {
 							register={register('eduCd')}
 							title="교육비 종류"
 							data={[
-								{ id: '1', value: '01', name: '유치원' },
-								{ id: '2', value: '02', name: '초중고등학교' },
-								{ id: '3', value: '03', name: '대학교' },
-								{ id: '4', value: '04', name: '대학원' },
-								{ id: '5', value: '05', name: '현장체험학습비' },
-								{ id: '6', value: '06', name: '교복구입' },
-								{ id: '7', value: '07', name: '장애인특수교육비' },
+								{ id: 1, value: '01', name: '유치원' },
+								{ id: 2, value: '02', name: '초중고등학교' },
+								{ id: 3, value: '03', name: '대학교' },
+								{ id: 4, value: '04', name: '대학원' },
+								{ id: 5, value: '05', name: '현장체험학습비' },
+								{ id: 6, value: '06', name: '교복구입' },
+								{ id: 7, value: '07', name: '장애인특수교육비' },
 							]}
 						/>
 						<Radio
@@ -240,7 +213,6 @@ const Home: NextPage = () => {
 						}}
 					/>
 					<SearchInput register={register('search')} />
-					<SubPageTitle title="SVG Icons" />
 					<icons.Notice />
 					<icons.Alert />
 					<icons.Add />
@@ -265,7 +237,6 @@ const Home: NextPage = () => {
 					<icons.CheckBig on={true} />
 					<icons.CheckBig on={false} />
 
-					<SubPageTitle title="Tags" />
 					<TagListCategory text="산후조리원" color="green" />
 					<TagListCategory text="연봉초과" color="red" />
 					<TagUserEdit />

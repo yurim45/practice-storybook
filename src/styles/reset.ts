@@ -78,21 +78,27 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    --primary: #00C092;
-    --black: #000000;
-    --darkgrey: #757575;
-    --grey: #b7b7b7;
-    --line: #e5e5e5;
-    --white: #ffffff;
+    --compo-primary: #00C092;
+    --compo-primary-press : #0AA882;
+    --compo-secondary: #F7F9F8;
+    --compo-line: #e5e5e5;
+    --compo-dim:#d5d5d5;
+    --compo-red :#F85151; 
+    --compo-blue : #0085FF;
 
-    --txt333: #333333;
-    --txt555: #555555;
-    --txt777: #777777;
-    --txt999: #999999;
-    --txtGreen: #00B98D;
-    --txtRed: #F85151;
-    --txtBlue: #0085FF;
-    --txtDim: #A5A5A5
+    // text
+    --text-333 : #333333;
+    --text-555: #555555;
+    --text-777 : #777777;
+    --text-999: #999999;
+    --text-disabled: #d5d5d5;
+    --text-green : #00B98D;
+    --text-red :#F85151; 
+    --text-blue : #0085FF;
+
+    // 공통
+    --white :#ffffff;
+    --black :#000000;
   }
 `;
 

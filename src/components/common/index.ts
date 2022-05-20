@@ -1,19 +1,8 @@
 import Anchor from './Anchor/Anchor';
-import TabMenu from './TabMenu/TabMenu';
-import TopCommon from './TopCommon/TopCommon';
-import TopSubMain from './TopSubMain/TopSubMain';
-import TopFullPopup from './TopFullPopup/TopFullPopup';
-import SubPageTitle from './SubPageTitle/SubPageTitle';
+import Header from './Header/Header';
+import BottomUp from './BottomUp/BottomUp';
 import Select from './Selet/Select';
 import Stepper from './Stepper/Stepper';
+import TabMenu from './TabMenu/TabMenu';
 
-export {
-	Anchor,
-	TabMenu,
-	TopCommon,
-	TopSubMain,
-	TopFullPopup,
-	SubPageTitle,
-	Select,
-	Stepper,
-};
+export { Anchor, Header, Select, Stepper, BottomUp, TabMenu };

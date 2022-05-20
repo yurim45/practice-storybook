@@ -1,25 +1,26 @@
-import { flex } from '@styles/variable';
-import React from 'react';
-import styled from 'styled-components';
+import React, { MouseEvent, TouchEvent } from 'react';
+import styled, { css } from 'styled-components';
 
 type ButtonProps = {
-	label?: string | React.ReactNode;
+	variant?: 'bigShort' | 'bigLong' | 'smallTypeA' | 'smallTypeB';
+	label: string | React.ReactNode;
+	isDisabled?: boolean;
 	type?: 'submit' | 'button';
-	size?: 'small' | 'full';
-	theme?: 'default' | 'except'; // 디폴트, 제외
-	disabled?: boolean;
-	onClick?: () => void;
+
+	//event
+	onTouchEnd?: (e: TouchEvent<HTMLButtonElement>) => void;
+	onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
 const Button = ({
-	label,
-	theme = 'default',
+	isDisabled,
+	variant = 'bigShort',
 	type = 'button',
-	...props
+	...rest
 }: ButtonProps) => {
 	return (
-		<Inner theme={theme} type={type} {...props}>
-			{label}
+		<Inner {...rest} type={type} variant={variant} disabled={isDisabled}>
+			{rest.label}
 		</Inner>
 	);
 };
@@ -27,39 +28,85 @@ const Button = ({
 export default Button;
 
 const Inner = styled.button<ButtonProps>`
-	width: ${(props) => (props.size === 'small' ? '80px' : '100%')};
-	height: ${(props) => (props.size === 'small' ? '30px' : '55px')};
-	border-radius: ${(props) => (props.size === 'small' ? '16px' : '10px')};
-	background: ${({ theme }) =>
-		theme === 'except' ? '#EEF1F1' : `var(${'--primary'})`};
-	color: ${({ theme }) =>
-		theme === 'except' ? '#7C8986' : `var(${'--white'})`};
-	font-weight: ${(props) => (props.size === 'small' ? `500` : '700')};
-	font-size: ${(props) => (props.size === 'small' ? `15px` : '16px')};
-	line-height: 1.5;
 	letter-spacing: -0.2px;
+	background-color: var(--compo-primary);
+	color: var(--white);
+
+	${({ variant }) => {
+		switch (variant) {
+			case 'bigLong':
+				return css`
+					width: 100%;
+					height: 55px;
+					font-size: 17px;
+					font-weight: 700;
+					line-height: 24.65px;
+					border-radius: 10px;
+				`;
+
+			case 'bigShort':
+				return css`
+					width: 100%;
+					height: 50px;
+					font-size: 17px;
+					font-weight: 700;
+					line-height: 24.65px;
+					border-radius: 10px;
+				`;
+
+			case 'smallTypeA':
+				return css`
+					min-width: 80px;
+					height: 30px;
+					font-size: 15px;
+					border-radius: 17px;
+					padding: 4px 27px;
+					line-height: 21.75px;
+				`;
+
+			case 'smallTypeB':
+				return css`
+					min-width: 80px;
+					height: 30px;
+					font-size: 15px;
+					border-radius: 17px;
+					padding: 4px 27px;
+					line-height: 21.75px;
+
+					/* specific */
+					background-color: #eef1f1 !important;
+					color: #7c8986 !important;
+				`;
+
+			default:
+				break;
+		}
+	}}
 
 	:active {
-		background: ${({ theme }) =>
-			theme === 'except' ? '#D2D2D2' : `var(${'--primary'})`};
-		color: ${({ theme }) =>
-			theme === 'except' ? '#7C8986' : `var(${'--white'})`};
+		background-color: var(--compo-primary-press);
+		${({ variant }) => {
+			return (
+				variant === 'smallTypeB' &&
+				css`
+					background-color: #d2d2d2 !important;
+				`
+			);
+		}}
 	}
 
 	:disabled {
-		background: ${(props) =>
-			props.theme === 'except'
-				? `var(${'--white'})`
-				: props.size === 'small'
-				? '#DBDBDB'
-				: '#DBDBDB'};
-		color: ${(props) =>
-			props.theme === 'except'
-				? '#C3C8CC'
-				: props.size === 'small'
-				? `var(${'--white'})`
-				: '#A5A5A5'};
+		background-color: #dbdbdb;
+		color: #a5a5a5;
+
+		${({ variant }) => {
+			return (
+				variant === 'smallTypeB' &&
+				css`
+					background-color: #eef1f1 !important;
+					color: #c3c8cc !important;
+				`
+			);
+		}}
 	}
 `;
-
-const Label = styled.span``;
