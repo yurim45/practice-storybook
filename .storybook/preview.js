@@ -1,15 +1,13 @@
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../src/styles/theme';
-import GlobalStyle from '../src/styles/reset';
+import React from 'react';
+import GlobalStyles from '../packages/bends/src/shared/GlobalStyles';
+import { addDecorator } from '@storybook/react';
 
-export const decorators = [
-	(Story) => (
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
-			<Story />
-		</ThemeProvider>
-	),
-];
+addDecorator((story) => (
+	<div style={{ width: '375px', padding: '0 20px' }}>
+		<GlobalStyles />
+		{story()}
+	</div>
+));
 
 export const parameters = {
 	actions: { argTypesRegex: '^on[A-Z].*' },
@@ -20,3 +18,12 @@ export const parameters = {
 		},
 	},
 };
+
+// export const decorators = [
+// 	(Story) => (
+// 		<ThemeProvider theme={theme}>
+// 			<GlobalStyle />
+// 			<Story />
+// 		</ThemeProvider>
+// 	),
+// ];
